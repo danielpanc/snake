@@ -1,0 +1,66 @@
+<!doctype html>
+<html ng-app>
+    <head>
+        <script src="lib/AngularJS v1.0.4.js"></script>
+        <script src="ang.js"></script>
+        <link rel="stylesheet" href="ang.css">
+
+    </head>
+
+    <body>
+    	<div ng-controller="MyCtrl">
+    	   <div id="dataContent">
+    		<h1>The number is: {{nr}}</h1>
+    		<h2>Count:
+    			<button ng-click="ascending()">Ascending</button>
+    			<button ng-click="descending()">Descending</button>
+    		</h2>
+    		<h2>Step:
+    			 <input type="number" ng-model="step" placeholder="Enter a number">
+    		</h2>
+
+            <h2>  Search: <input ng-model="query"> </h2>
+
+    		<h2> Scores: </h2>
+            <hr>
+    		<ul>
+    			<li ng-repeat="score in scores | filter:query">
+    				<span  ng-class-odd="'odd'"  ng-class-even="'even'">{{score.name}}
+    				{{score.score}}</span>
+    				<a href="" ng-click="deleteScore()">delete</a>
+    			</li>
+    		<ul>
+    	   </div>
+
+            <div id="topScores">
+                <h2> Top <input type="number" ng-model="limit">  scores </h2>
+                <hr>
+                <ol>
+                    <li ng-repeat="score in scores | limitTo:limit">
+                        <span>{{score.name}}
+                        {{score.score}}</span>
+                    </li>
+                </ol>
+            </div>
+
+    		<div id="form" ng-hide=pressed>
+    			<p> Game Over! <br> Enter your name here: <p>
+    	  		<form ng-submit="addScore()">
+    	  			<input id="in" type="text" ng-model="name">
+    	  			<br>
+					<input class="btn-primary" type="submit" value="Submit">
+				</form>
+			</div>
+           
+    	</div>
+
+
+
+    	<canvas id="scoreCanvas" width="578" height="200"></canvas>
+
+    	<canvas id="myCanvas" width="578" height="500"></canvas>
+
+
+    	<script src="canvasjs.js" type="text/javascript"></script>
+    </body>
+</html>

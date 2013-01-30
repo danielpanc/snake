@@ -1,0 +1,45 @@
+#myCanvas {
+    border: 1px solid #9C9898;
+    width: 600px;
+    height: 600px;
+    margin-left: 250px;
+    margin-top: -150px;
+      }
+#form {
+    
+    padding: 50px;
+    border: 3px solid #9C9898;
+    position: absolute;
+    display: block;
+    width: 600px;
+    height: 600px;
+    background-color: #b0c4de;
+    left: 660px;
+    margin-top: 50px;
+    display: none;
+}
+
+#dataContent {
+    float: left;
+}
+
+#scoreCanvas{
+    margin-left: 500px;
+}
+
+#topScores{
+    float: left;
+    margin-left: 30px;
+    margin-top: 206px;
+}
+#topScores input {
+    width: 50px;
+}
+
+.odd {
+    color: red;
+}
+
+.even {
+    color: blue;
+}
